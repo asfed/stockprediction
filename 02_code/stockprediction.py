@@ -1,5 +1,5 @@
 # Import
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 import numpy as np
 import pandas as pd
 from sklearn.preprocessing import MinMaxScaler
@@ -49,6 +49,8 @@ n_neurons_4 = 128
 
 # Session
 net = tf.InteractiveSession()
+
+tf.compat.v1.disable_eager_execution()
 
 # Placeholder
 X = tf.placeholder(dtype=tf.float32, shape=[None, n_stocks])
